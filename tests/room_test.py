@@ -19,7 +19,7 @@ class TestRoom(unittest.TestCase):
         self.person2 = Person("Alan", 100, self.song2)
         self.person3 = Person("Skint", 1, self.song2)
         self.person4 = Person("Joe", 6, self.song3)
-        self.bar = Bar()
+        self.bar = Bar(5)
  
     def test_returns_a_room_num(self):
         self.assertEqual(1, self.room1.number)
@@ -101,5 +101,5 @@ class TestRoom(unittest.TestCase):
         self.bar.drink_sell(self.person2, self.room1)
         self.bar.drink_sell(self.person2, self.room1)
         self.bar.drink_sell(self.person3, self.room1)
-        self.assertEqual("You're skint mate", self.room1.tab) 
+        self.assertEqual(25, self.room1.tab) 
 
